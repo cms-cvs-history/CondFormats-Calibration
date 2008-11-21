@@ -1,7 +1,7 @@
 #include <bitset>
 #include <iostream>
 #include <stdexcept>
-#include "POOLCore/POOLContext.h"
+#include "CoralBase/MessageStream.h"
 #include "StorageSvc/DbType.h"
 #include "StorageSvc/poolDb.h"
 #include "DataSvc/IDataSvc.h"
@@ -18,10 +18,9 @@
 #include "CondFormats/Calibration/interface/boostTypeObj.h"
 #include <cassert>
 int main(){
-  pool::POOLContext::loadComponent( "SEAL/Services/MessageService" );
-  pool::POOLContext::setMessageVerbosityLevel( seal::Msg::Error );  
+  coral::MessageStream::setMsgVerbosity( coral::Info );
   pool::Placement place;
-  place.setDatabase("oracle://devdb10/cms_xiezhen_dev", pool::DatabaseSpecification::PFN );
+  place.setDatabase("sqlite_file:me.db", pool::DatabaseSpecification::PFN );
   place.setContainerName("Cont1");
   place.setTechnology(pool::POOL_RDBMS_HOMOGENEOUS_StorageType.type());
   pool::IFileCatalog* fileCatalog = new pool::IFileCatalog;

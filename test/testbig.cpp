@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include "POOLCore/POOLContext.h"
+#include "CoralBase/MessageStream.h"
 #include "StorageSvc/DbType.h"
 #include "StorageSvc/poolDb.h"
 #include "DataSvc/IDataSvc.h"
@@ -16,8 +16,7 @@
 #include "FileCatalog/IFileCatalog.h"
 #include "CondFormats/Calibration/interface/big.h"
 int main(){
-  pool::POOLContext::loadComponent( "SEAL/Services/MessageService" );
-  pool::POOLContext::setMessageVerbosityLevel( seal::Msg::Error );  
+  coral::MessageStream::setMsgVerbosity(coral::Error);
   pool::Placement place;
   //place.setDatabase("oracle://devdb10/cms_xiezhen_dev", pool::DatabaseSpecification::PFN );
   place.setDatabase("sqlite_file:testbig.db", pool::DatabaseSpecification::PFN );
