@@ -1,9 +1,5 @@
 <use name=CondFormats/Calibration>
 <use name=CondCore/DBCommon>
-<library file=Pedestalsc00/Pedestals.cc name=Pedestalsc00>
-</library>
-<library file=Pedestalsc01/Pedestals.cc name=Pedestalsc01>
-</library>
 <bin file=testBitSet.cpp></bin>
 <bin file=testBoostType.cpp></bin>
 <bin file=testbig.cpp></bin>
